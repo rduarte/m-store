@@ -3,6 +3,11 @@
 <head>
 <title>Flower Shop</title>
 <link rel="stylesheet" type="text/css" href="stylesheets/application.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/jquery.fancybox-1.3.4.css" />
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery_ujs.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="/javascripts/application.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -35,10 +40,11 @@
         
         	<div class="feat_prod_box_details">
             
-            	<div class="prod_img"><a href="details.html"><img src="images/prod1.gif" alt="" title="" border="0" /></a>
+            	<div class="prod_img">
+								<a href="details.html"><img src="images/prod1.gif" alt="" title="" border="0" /></a>
                 <br /><br />
                 <a href="images/big_pic.jpg" rel="lightbox"><img src="images/zoom.gif" alt="" title="" border="0" /></a>
-                </div>
+              </div>
                 
                 <div class="prod_det_box">
                 	<div class="box_top"></div>
@@ -266,11 +272,4 @@
 </div>
 
 </body>
-<script type="text/javascript">
-
-var tabber1 = new Yetii({
-id: 'demo'
-});
-
-</script>
 </html>
