@@ -26,7 +26,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-var Custom="Custom",GoogleCheckout="GoogleCheckout",PayPal="PayPal",Email="Email",AustralianDollar="AUD",AUD="AUD",CanadianDollar="CAD",CAD="CAD",CzechKoruna="CZK",CZK="CZK",DanishKrone="DKK",DKK="DKK",Euro="EUR",EUR="EUR",HongKongDollar="HKD",HKD="HKD",HungarianForint="HUF",HUF="HUF",IsraeliNewSheqel="ILS",ILS="ILS",JapaneseYen="JPY",JPY="JPY",MexicanPeso="MXN",MXN="MXN",NorwegianKrone="NOK",NOK="NOK",NewZealandDollar="NZD",NZD="NZD",PolishZloty="PLN",PLN="PLN",PoundSterling="GBP",GBP="GBP",SingaporeDollar="SGD",SGD="SGD",SwedishKrona="SEK",SEK="SEK",SwissFranc="CHF",CHF="CHF",ThaiBaht="THB",THB="THB",USDollar="USD",USD="USD";
+var Custom="Custom",GoogleCheckout="GoogleCheckout",PayPal="PayPal",PagSeguro="PagSeguro",Email="Email",AustralianDollar="AUD",AUD="AUD",CanadianDollar="CAD",CAD="CAD",CzechKoruna="CZK",CZK="CZK",DanishKrone="DKK",DKK="DKK",Euro="EUR",EUR="EUR",HongKongDollar="HKD",HKD="HKD",HungarianForint="HUF",HUF="HUF",IsraeliNewSheqel="ILS",ILS="ILS",JapaneseYen="JPY",JPY="JPY",MexicanPeso="MXN",MXN="MXN",NorwegianKrone="NOK",NOK="NOK",NewZealandDollar="NZD",NZD="NZD",PolishZloty="PLN",PLN="PLN",PoundSterling="GBP",GBP="GBP",SingaporeDollar="SGD",SGD="SGD",SwedishKrona="SEK",SEK="SEK",SwissFranc="CHF",CHF="CHF",ThaiBaht="THB",THB="THB",USDollar="USD",USD="USD",BrazilianReal="BRL", BRL="BRL";
 function Cart(){
 
 	var me = this;
@@ -232,6 +232,9 @@ function Cart(){
 			case Email:
 				simpleCart.emailCheckout();
 				break;
+			case PagSeguro:
+				simpleCart.pagseguroCheckout();
+				break;
 			default:
 				simpleCart.customCheckout();
 				break;
@@ -360,7 +363,33 @@ function Cart(){
 		document.body.removeChild( form );
 	};
 
+	me.pagseguroCheckout = function() {
+		var me = this;
 
+		var form = document.createElement("form");
+		var counter = 1;
+		form.style.display = "none";
+		form.method = "POST";
+		form.target ="pagseguro";
+		form.action = "https://pagseguro.uol.com.br/checkout/checkout.jhtml";
+		form.acceptCharset = "utf-8";
+		form.appendChild( me.createHiddenElement( "email_cobranca", me.email) );
+		form.appendChild( me.createHiddenElement( "tipo", "CP") );
+		form.appendChild( me.createHiddenElement( "moeda", "BRL") );
+		for( var current in me.items ){
+			var item 				= me.items[current];
+			form.appendChild( me.createHiddenElement( "item_id_" 		+ counter, counter		) );
+			form.appendChild( me.createHiddenElement( "item_descr_" 		+ counter, item.name		) );
+			form.appendChild( me.createHiddenElement( "item_quant_" 	+ counter, item.quantity 	) );
+			form.appendChild( me.createHiddenElement( "item_valor_" 		+ counter, item.price.withoutCommas() ) );
+			form.appendChild( me.createHiddenElement( "item_peso_" 	+ counter, item.size 	) );
+			counter++;
+		}
+
+		document.body.appendChild( form );
+		form.submit();
+		document.body.removeChild( form );
+	};
 
 	me.emailCheckout = function() {
 		return;
@@ -1233,6 +1262,7 @@ var getElementsByClassName = function (className, tag, elm){
 
 String.prototype.reverse=function(){return this.split("").reverse().join("");};
 Number.prototype.withCommas=function(){var x=6,y=parseFloat(this).toFixed(2).toString().reverse();while(x<y.length){y=y.substring(0,x)+","+y.substring(x);x+=4;}return y.reverse();};
+Number.prototype.withoutCommas=function(){var x=6,y=parseFloat(this).toFixed(2).toString().reverse();while(x<y.length){y=y.substring(0,x)+""+y.substring(x);x+=4;}return y.reverse();};
 Number.prototype.toCurrency=function(){return(arguments[0]?arguments[0]:"$")+this.withCommas();};
 
 
