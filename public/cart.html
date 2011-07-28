@@ -3,6 +3,8 @@
 <head>
 <title>Flower Shop</title>
 <link rel="stylesheet" type="text/css" href="stylesheets/application.css" />
+<script type="text/javascript" src="javascripts/simpleCart.js?bbb"></script>
+<script type="text/javascript" src="javascripts/simpleCart.config.js?bbb"></script>
 </head>
 <body>
 <div id="wrap">
@@ -29,7 +31,54 @@
        <div class="center_content">
        	<div class="left_content">
             <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" title="" /></span>My cart</div>
-        
+
+						<ul>
+							<li class="simpleCart_shelfItem">
+								<h2 class="item_name">Zebra</h2>
+								<span class="item_price">$187.95</span>
+								<input type="hidden" class="item_shipping" value="20" />	
+								<input type="text" class="item_quantity" value="1" />
+								<input type="hidden" class="item_size" value="0.1" />
+								<input type="button" class="item_add" value="add to cart" />
+							</li>
+
+
+							<li class="simpleCart_shelfItem">
+								<h2 class="item_name">Cow</h2>
+								<span class="item_price">$18.00</span>		
+								<input type="text" class="item_quantity" value="1" />
+								<input type="hidden" class="item_size" value="0.1" />
+								<input type="button" class="item_add" value="add to cart" />
+							</li>
+
+
+
+							<li>
+								<h2>Baby Lion</h2>
+								<div>$34.95</div>
+								<a href="javascript:;" onclick="simpleCart.add('name=baby lion', 'price=34.95','size=0.2','quantity=1','thumb=e.png');" >add to cart</a>
+							</li>
+
+						</ul>
+
+						<div class="simpleCart_items" >
+						</div>
+
+
+						<br />
+						SubTotal: <span class="simpleCart_total"></span> <br />
+						Tax: <span class="simpleCart_taxCost"></span> <br />
+						Shipping: <span class="simpleCart_shippingCost"></span> <br />
+						-----------------------------<br />
+						Final Total: <span class="simpleCart_finalTotal"></span> <br />
+
+						
+
+					<a href="javascript:;" class="simpleCart_empty">empty cart</a>
+
+					<div class="feat_prod_box_details simpleCart_items" >
+					</div>
+
         	<div class="feat_prod_box_details">
             
             <table class="cart_table">
@@ -75,7 +124,8 @@
             
             </table>
             <a href="#" class="continue">&lt; continue</a>
-            <a href="#" class="checkout">checkout &gt;</a>
+						<a href="javascript:;" class="checkout simpleCart_checkout">checkout &gt;</a>
+
             
 
              
@@ -91,25 +141,11 @@
         </div><!--end of left content-->
         
         <div class="right_content">
-        
-                	<div class="languages_box">
-            <span class="red">Languages:</span>
-            <a href="#"><img src="images/gb.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="images/fr.gif" alt="" title="" border="0" /></a>
-            <a href="#"><img src="images/de.gif" alt="" title="" border="0" /></a>
-            </div>
-                <div class="currency">
-                <span class="red">Currency: </span>
-                <a href="#">GBP</a>
-                <a href="#">EUR</a>
-                <a href="#"><strong>USD</strong></a>
-                </div>
-                
                 
               <div class="cart">
                   <div class="title"><span class="title_icon"><img src="images/cart.gif" alt="" title="" /></span>My cart</div>
                   <div class="home_cart_content">
-                  3 x items | <span class="red">TOTAL: 100$</span>
+                  <span class="simpleCart_quantity"></span> x items | <span class="red">TOTAL: <span class="simpleCart_total"></span></span>
                   </div>
                   <a href="cart.html" class="view_cart">view cart</a>
               
