@@ -3,4 +3,5 @@
 	simpleCart.currency = BRL;
 	simpleCart.shippingFlatRate = 0;
 	simpleCart.shippingQuantityRate = 0;
-	simpleCart.cartHeaders = ["Product name" , "Unit Price", "decrement_noHeader" , "Quantity", "increment_noHeader", "remove_noHeader", "Total" ];
+	simpleCart.cartHeaders = ["Name" , "Price", "decrement" , "Quantity", "increment", "Total", "remove" ];
+	simpleCart.language = "pt_br";

@@ -551,9 +551,9 @@ function Cart(){
 			y,newRow,current,header,newCell,info,outputValue,option,headerInfo;
 
 		/* create headers row */
-		newRow = document.createElement('div');
+		newRow = document.createElement('tr');
 		for(var y=0,ylen = me.cartHeaders.length; y<ylen; y++ ){
-			newCell = document.createElement('div');
+			newCell = document.createElement('th');
 			headerInfo = me.cartHeaders[y].split("_");
 
 			newCell.innerHTML = me.print( headerInfo[0] );
@@ -571,10 +571,10 @@ function Cart(){
 
 		/* create a row for each item in the cart */
 		me.each(function(item, x){
-			newRow = document.createElement('div');
+			newRow = document.createElement('tr');
 
 			for(var y=0,ylen = me.cartHeaders.length; y<ylen; y++ ){
-				newCell = document.createElement('div');
+				newCell = document.createElement('td');
 				info = me.cartHeaders[y].split("_");
 			
 				outputValue = me.createCartRow( info , item , outputValue );
@@ -716,6 +716,8 @@ function Cart(){
 				return "CHF&nbsp;";
 			case THB: 
 				return "&#3647;";
+			case BRL:
+				return "R&#36;";
 			case USD:
 			case CAD:
 			case AUD:
@@ -817,7 +819,19 @@ function Cart(){
 			, tax: "Tax"
 			, shipping: "Shipping"
 			, image: "Image"
-		} 
+		},
+		"pt_br": {
+				name: "Produto"
+			, quantity: "Qtd"
+			, price: "Preço"
+			, total: "Total"
+			, decrement: "Diminuir"
+			, increment: "Aumentar"
+			, remove: "Excluir"
+			, tax: "Taxa"
+			, shipping: "Frete"
+			, image: "Imagem"
+		}
 	};
 	
 	me.language = "en_us"; 
@@ -1263,7 +1277,7 @@ var getElementsByClassName = function (className, tag, elm){
 String.prototype.reverse=function(){return this.split("").reverse().join("");};
 Number.prototype.withCommas=function(){var x=6,y=parseFloat(this).toFixed(2).toString().reverse();while(x<y.length){y=y.substring(0,x)+","+y.substring(x);x+=4;}return y.reverse();};
 Number.prototype.withoutCommas=function(){var x=6,y=parseFloat(this).toFixed(2).toString().reverse();while(x<y.length){y=y.substring(0,x)+""+y.substring(x);x+=4;}return y.reverse();};
-Number.prototype.toCurrency=function(){return(arguments[0]?arguments[0]:"$")+this.withCommas();};
+Number.prototype.toCurrency=function(){return(arguments[0]?arguments[0]:"$")+this.withoutCommas();};
 
 
 /********************************************************************************************************
