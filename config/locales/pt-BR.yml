@@ -239,6 +239,8 @@
         format: "%{attribute} %{message}"
     models:
       product: Produto
+      category: Categoria
+      user: Usuário
     attributes:
         product:
           name: Nome
@@ -246,3 +248,13 @@
           list_price: Preço anterior
           price: Preço
           weight: Peso
+          categories: Categorias
+          created_at: Criado em
+          updated_at: Atualizado em
+        category:
+          name: Nome
+          parent_id: Categoria-pai 
+          created_at: Criado em
+          updated_at: Atualizado em
+        user:
+          email: Email

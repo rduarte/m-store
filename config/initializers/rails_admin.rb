@@ -1,3 +1,5 @@
 RailsAdmin.config do |config|
-  config.excluded_models = [User]
+  config.model Category do
+    exclude_fields :lft, :rgt
+  end
 end
