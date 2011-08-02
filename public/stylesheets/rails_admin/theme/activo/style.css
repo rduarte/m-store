@@ -474,7 +474,8 @@ hr {
 .table th {
   background: #eaeaea;
   color: #222222;
-  font-weight: normal; }
+  font-weight: normal;
+  text-transform: uppercase; }
   .table th.last {
     width: 80px; }
 .table td {
