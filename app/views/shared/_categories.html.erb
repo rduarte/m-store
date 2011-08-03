@@ -1,0 +1,8 @@
+<% content_tag :li do %>
+  <span class="handle"><a href="/category/<%= menu.friendly_id %>"><%= menu.name %></a</span>    
+  <% content_tag :ul do %>
+   <% menu.children.each do |child| %>
+    <%= render :partial => "shared/categories", :locals => {:menu => child }%>
+   <% end %>
+  <% end unless menu.leaf? %>
+ <% end %>

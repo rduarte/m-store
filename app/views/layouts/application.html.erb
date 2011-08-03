@@ -13,7 +13,7 @@
 		<div id="wrap">
 	    <div class="header">
 	    	<div class="logo">
-					<a href="/"><img src="images/logo.gif" alt="" title="" border="0" /></a>
+					<a href="/"><img src="/images/logo.gif" alt="" title="" border="0" /></a>
 				</div>            
 				<div id="menu">
 	      	<ul>                                                                       
@@ -50,49 +50,17 @@
 						</p>
 					</div>
 					<div class="right_box">
-						<div class="title"><span class="title_icon"><img src="images/bullet4.gif" alt="" title="" /></span>Promotions</div> 
-						<div class="new_prod_box">
-							<a href="details.html">product name</a>
-							<div class="new_prod_bg">
-								<span class="new_icon"><img src="images/promo_icon.gif" alt="" title="" /></span>
-								<a href="details.html"><img src="images/thumb1.gif" alt="" title="" class="thumb" border="0" /></a>
-							</div>
-						</div>
-					</div>
-					<div class="right_box">
 						<div class="title">
-							<span class="title_icon"><img src="images/bullet5.gif" alt="" title="" /></span>Categories
+							<span class="title_icon"><img src="images/bullet5.gif" alt="" title="" /></span>Categorias
 						</div>
+                  
+                  
 						<ul class="list">
-							<li><a href="#">accesories</a></li>
-							<li><a href="#">flower gifts</a></li>
-							<li><a href="#">specials</a></li>
-							<li><a href="#">hollidays gifts</a></li>
-							<li><a href="#">accesories</a></li>
-							<li><a href="#">flower gifts</a></li>
-							<li><a href="#">specials</a></li>
-							<li><a href="#">hollidays gifts</a></li>
-							<li><a href="#">accesories</a></li>
-							<li><a href="#">flower gifts</a></li>
-							<li><a href="#">specials</a></li>                                              
+                     <% @categories.each do |category| %>
+                        <%= render :partial => "shared/categories", :locals => { :menu => category } %> 
+                     <% end %>                                            
 						</ul>
-						
-						<div class="title">
-							<span class="title_icon"><img src="images/bullet6.gif" alt="" title="" /></span>Partners
-						</div>
-						<ul class="list">
-							<li><a href="#">accesories</a></li>
-							<li><a href="#">flower gifts</a></li>
-							<li><a href="#">specials</a></li>
-							<li><a href="#">hollidays gifts</a></li>
-							<li><a href="#">accesories</a></li>
-							<li><a href="#">flower gifts</a></li>
-							<li><a href="#">specials</a></li>
-							<li><a href="#">hollidays gifts</a></li>
-							<li><a href="#">accesories</a></li>
-							<li><a href="#">flower gifts</a></li>
-							<li><a href="#">specials</a></li>                                              
-						</ul>      
+						     
 					</div>         
 				</div>      
 				<div class="clear"></div>
