@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   before_filter :load_categories  
 
   def load_categories
-    @categories = Category.root.self_and_siblings
+    @categories = Category.root.self_and_siblings if Category.root.present?
+    @categories ||= []
   end
 
 end
