@@ -41,6 +41,7 @@ GEM
     arel (2.0.10)
     awesome_nested_set (2.0.1)
       activerecord (>= 3.0.0)
+    babosa (0.3.5)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     devise (1.4.2)
@@ -50,6 +51,8 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     fastercsv (1.5.4)
+    friendly_id (3.2.1.1)
+      babosa (~> 0.3.0)
     haml (3.1.2)
     i18n (0.5.0)
     jquery-rails (1.0.12)
@@ -98,6 +101,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_nested_set
   devise
+  friendly_id (~> 3.2)
   jquery-rails (>= 1.0.12)
   rails (= 3.0.9)
   rails_admin!
