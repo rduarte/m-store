@@ -1,0 +1,30 @@
+<div class="crumb_nav">
+  <a href="/">Início</a> » <a href="/products">Produtos</a> <%=raw(categories(@category)) if @category.present? %>
+</div>
+
+<div class="title">
+	<span class="title_icon"><img src="/images/bullet1.gif" alt="" title="" /></span>Produtos<%= " » #{@category.name}" if @category.present? %>
+</div>
+
+<div class="new_products">
+<% @products.each do |product| %>
+	<div class="product_box">
+		<div class="product">
+			<a href="/product/<%= product.friendly_id %>">
+				<img src="http://lorempixum.com/190/130/technics/" alt="" title="" border="0" />
+			</a>
+			<p><a href="details.html"><%=truncate(product.name) %><span class="price"><%=number_to_currency product.price %></span></a></p>
+		</div>          
+	</div>
+<% end %>
+  <div class="pagination">
+  	<span class="disabled"><<</span>
+		<span class="current">1</span>
+		<a href="#?page=2">2</a>
+		<a href="#?page=3">3</a>
+		...
+		<a href="#?page=199">10</a>
+		<a href="#?page=200">11</a>
+		<a href="#?page=2">>></a>
+  </div>  
+</div>

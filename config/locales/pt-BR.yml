@@ -256,5 +256,7 @@
           parent_id: Categoria-pai 
           created_at: Criado em
           updated_at: Atualizado em
+          children: Categorias filhas
+          products: Produtos
         user:
           email: Email

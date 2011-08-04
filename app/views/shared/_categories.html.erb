@@ -1,6 +1,6 @@
 <% content_tag :li do %>
-  <span class="handle"><a href="/category/<%= menu.friendly_id %>"><%= menu.name %></a</span>    
-  <% content_tag :ul do %>
+  <span class="handle"><a href="/products/<%= menu.friendly_id %>"><%= menu.name %></a</span>    
+  <% content_tag :ul, :class => "sublist" do %>
    <% menu.children.each do |child| %>
     <%= render :partial => "shared/categories", :locals => {:menu => child }%>
    <% end %>
