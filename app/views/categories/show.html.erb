@@ -1,7 +1,3 @@
-<div class="crumb_nav">
-  <%=link_to "Início", root_path %> » <%=link_to "Produtos", categories_url %> <%=raw(categories(@category)) if @category.present? %>
-</div>
-
 <div class="title">
 	<span class="title_icon"><img src="/images/bullet1.gif" alt="" title="" /></span>Produtos<%= " » #{@category.name}" if @category.present? %>
 </div>

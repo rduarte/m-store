@@ -268,3 +268,11 @@
     cart: carrinho
   resources:
     categories: produtos
+  titles:
+    home: Início
+    about: Sobre a loja
+    cart: Meu carrinho
+    categories: Produtos
+    contact: Contato
+    product: Produto
+    specials: Pedidos personalizados

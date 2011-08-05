@@ -29,6 +29,10 @@
 			</div>
 			<div class="center_content">
 				<div class="left_content">
+					<div class="crumb_nav">
+						<%= breadcrumbs.render(:format => :inline, :separator => '»') %>
+					</div>
+
 					<%= yield %>	
 	        <div class="clear"></div>
         </div>
