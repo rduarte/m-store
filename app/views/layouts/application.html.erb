@@ -13,16 +13,17 @@
 		<div id="wrap">
 	    <div class="header">
 	    	<div class="logo">
-					<a href="/"><img src="/images/logo.gif" alt="" title="" border="0" /></a>
+					<%=link_to image_tag("/images/logo.gif"), root_path %>
+
 				</div>            
 				<div id="menu">
 	      	<ul>                                                                       
-	        	<li><a href="/">Início</a></li>
-						<li><a href="/about">Sobre a loja</a></li>
-						<li><a href="/products">Produtos</a></li>
-						<li><a href="/specials">Pedidos personalizados</a></li>
-						<li><a href="/cart">Meu carrinho</a></li>
-						<li><a href="/contact">Contato</a></li>
+	        	<li><%=link_to "Início", root_path %></li>
+						<li><%=link_to "Sobre a loja", about_url %></li>
+						<li><%=link_to "Produtos", categories_url %></li>
+						<li><%=link_to "Pedidos personalizados", specials_url %></li>
+						<li><%=link_to "Meu carrinho", cart_url %></li>
+						<li><%=link_to "Contato", contact_url %></li>
 	      	</ul>
 				</div>     
 			</div>
@@ -35,21 +36,19 @@
         <div class="right_content">
 					<div class="cart">
 						<div class="title"><span class="title_icon"><img src="/images/cart.gif" alt="" title="" /></span>Meu carrinho</div>
-						<p><span class="total_cart">Total: <span class="simpleCart_total"></span></span><a href="cart" class="view_cart">ver carrinho</a></p>
+						<p><span class="total_cart">Total: <span class="simpleCart_total"></span></span><%=link_to "ver carrinho", cart_url, :class => "view_cart" %></p>
 						<br class="clear" />
 					</div>
+
 					<div class="right_box">
 						<div class="title">
 							<span class="title_icon"><img src="/images/bullet5.gif" alt="" title="" /></span>Produtos
 						</div>
-                  
-                  
 						<ul class="list">
-                     <% @categories.each do |category| %>
-                        <%= render :partial => "shared/categories", :locals => { :menu => category } %> 
-                     <% end %>                                            
+	            <% @categories.each do |category| %>
+	               <%= render :partial => "shared/categories", :locals => { :menu => category } %> 
+	            <% end %>                                            
 						</ul>
-						     
 					</div>         
 				</div>      
 				<div class="clear"></div>

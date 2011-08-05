@@ -3,11 +3,12 @@
 		</div>
 		<div class="clear"></div>
 		
-		<p class="simpleCart_empty_cart"><a href="javascript:;" class="simpleCart_empty">Limpar carrinho</a></p>
-		<table class="simpleCart_items">
-		</table>
+		<p class="simpleCart_empty_cart">
+			<%=link_to "Limpar carrinho", "javascript:;", :class => "simpleCart_empty" %>
+		</p>
+		<table class="simpleCart_items"></table>
 		<p class="total">Total: <span class="simpleCart_finalTotal"></span> + frete</p>
 
-		<a href="/" class="button continue">&lt; continuar comprando</a>
-		<a href="javascript:;" class="button checkout simpleCart_checkout">finalizar pedido &gt;</a>
+		<%=link_to "« continuar comprando", categories_url, :class => "button continue" %>
+		<%=link_to "finalizar pedido »", "javascript:;", :class => "button checkout simpleCart_checkout" %>
 
