@@ -85,14 +85,14 @@ a.continue{width:150px;float:left;margin:10px 0 0 0px;}
 .terms{padding:0 0 0 80px;}
 .form_subtitle{position:absolute;top:-11px;left:7px;width:auto;height:20px;background-color:#990000;text-align:center;padding:0 7px 0 7px;color:#FFFFFF;font-size:11px;line-height:20px;}
 /*--------------cart_table-------------*/
-.simpleCart_items{ background:#dfdfdf; border:1px #CCCCCC solid; width:470px; border-collapse: collapse; }
+.simpleCart_items{ background:#dfdfdf; border:1px #CCCCCC solid; width:620px; border-collapse: collapse; }
 tr.cartHeaders {background-color:#DFDFDF; text-align:left;}
 tr.itemContainer{ background: #fff; border-bottom:1px solid #eaeaea;}
 th { padding:7px 5px;}
 td{ padding:15px 5px;}
 .cartHeaders .itemdecrement, .cartHeaders .itemincrement { display:block; visibility:hidden; width:10px; clear:both; padding:0; }
 .cartHeaders .itemremove, .cartHeaders .itemPrice, .cartHeaders .itemTotal{ text-align:center;}
-.itemContainer .itemName { width:300px; }
+.itemContainer .itemName { width:400px; }
 .itemContainer .itemPrice { width:60px; text-align:right;}
 .itemContainer .itemTotal { width:80px; text-align:right;}
 .itemContainer .itemQuantity{ text-align:center; background:#f2f2f2; }
