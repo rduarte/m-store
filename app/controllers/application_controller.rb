@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  I18n.locale = MStore::Application::config.i18n.default_locale.to_s # Heroku hack
+
   protect_from_forgery
 
   before_filter :load_categories  
