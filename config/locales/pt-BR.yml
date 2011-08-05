@@ -260,3 +260,11 @@
           products: Produtos
         user:
           email: Email
+  named_routes_path:
+    contact: contato
+    'product/:id': 'produto/:id'
+    about: sobre-a-loja
+    specials: pedidos-personalizados
+    cart: carrinho
+  resources:
+    categories: produtos

@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class CategoriesController < ApplicationController
   def index
     @products = Category.all.map { |cat| cat.products }.flatten
     render :show

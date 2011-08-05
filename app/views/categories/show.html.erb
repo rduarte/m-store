@@ -1,5 +1,5 @@
 <div class="crumb_nav">
-  <a href="/">Início</a> » <a href="/products">Produtos</a> <%=raw(categories(@category)) if @category.present? %>
+  <%=link_to "Início", root_path %> » <%=link_to "Produtos", categories_url %> <%=raw(categories(@category)) if @category.present? %>
 </div>
 
 <div class="title">
@@ -10,10 +10,9 @@
 <% @products.each do |product| %>
 	<div class="product_box">
 		<div class="product">
-			<a href="/product/<%= product.friendly_id %>">
-				<img src="http://lorempixum.com/190/130/technics/" alt="" title="" border="0" />
-			</a>
-			<p><a href="details.html"><%=truncate(product.name) %><span class="price"><%=number_to_currency product.price %></span></a></p>
+			<%=link_to image_tag("http://lorempixum.com/190/130/technics/"), product_url(product.friendly_id) %>
+
+			<p><%=link_to truncate(product.name), product_url(product.friendly_id) %><span class="price"><%=link_to number_to_currency(product.price), product_url(product.friendly_id) %></span></p>
 		</div>          
 	</div>
 <% end %>
