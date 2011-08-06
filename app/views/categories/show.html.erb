@@ -6,20 +6,10 @@
 <% @products.each do |product| %>
 	<div class="product_box">
 		<div class="product">
-			<%=link_to image_tag("http://lorempixum.com/190/130/technics/"), product_url(product.friendly_id) %>
+			<%=image_link_to product %>
 
 			<p><%=link_to truncate(product.name), product_url(product.friendly_id) %><span class="price"><%=link_to raw(%[<span class="list_price">#{number_to_currency(product.list_price)}</span> #{number_to_currency(product.price)}]), product_url(product.friendly_id) %></span></p>
 		</div>          
 	</div>
 <% end %>
-  <div class="pagination">
-  	<span class="disabled"><<</span>
-		<span class="current">1</span>
-		<a href="#?page=2">2</a>
-		<a href="#?page=3">3</a>
-		...
-		<a href="#?page=199">10</a>
-		<a href="#?page=200">11</a>
-		<a href="#?page=2">>></a>
-  </div>  
 </div>

@@ -241,6 +241,7 @@
       product: Produto
       category: Categoria
       user: Usuário
+      photo: Foto
     attributes:
         product:
           name: Nome
@@ -251,6 +252,7 @@
           categories: Categorias
           created_at: Criado em
           updated_at: Atualizado em
+          photos: Fotos
         category:
           name: Nome
           parent_id: Categoria-pai 
@@ -260,6 +262,12 @@
           products: Produtos
         user:
           email: Email
+        photo:
+          data: Arquivo
+          description: Descrição
+          product_id: Produto
+          created_at: Criado em
+          updated_at: Atualizado em
   named_routes_path:
     contact: contato
     'product/:id': 'produto/:id'
@@ -276,3 +284,4 @@
     contact: Contato
     product: Produto
     specials: Pedidos personalizados
+    navigation: Navegação

@@ -13,6 +13,17 @@ RailsAdmin.config do |config|
     exclude_fields :lft, :rgt, :cached_slug
   end
   config.model Product do
-    exclude_fields :cached_slug
+    exclude_fields :cached_slug, :photos
+  end
+  config.model Photo do
+    list do
+      field :product_id
+      field :data do
+        formatted_value do
+          bindings[:view].tag(:img, { :src => bindings[:object].data.url(:small) })
+        end
+      end
+      field :updated_at
+    end
   end
 end
