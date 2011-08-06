@@ -878,6 +878,11 @@ function Cart(){
 		me.shippingCost = me.shipping();
 		me.taxCost = parseFloat(me.total)*me.taxRate;
 		me.finalTotal = me.shippingCost + me.taxCost + me.total;
+		
+		$(document).ready(function() {
+			$("#total_cart").fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
+		});
+		
 	};
 
 	me.shipping = function(){
