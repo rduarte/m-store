@@ -29,6 +29,8 @@ ul#nav li:hover {
   color: inherit;
 }
 
+#sidebar .block.notice{ display:none; }
+
 /* Fix for uniform.js checkbox css: */
 div.checker input.checkbox {
   margin: 0;
