@@ -21,6 +21,7 @@ p.more_details{padding:25px 20px 0px 20px;font-size:11px;}
 .crumb_nav a:hover, .crumb_nav a:active{color:#666; text-decoration:underline;}
 span.red{color:#990000;}
 .price{font-size:14px;padding:0 0 0 15px;margin:2px 0 5px 0;}
+.list_price{ font-size:12px; color:#bbb; text-decoration:line-through; font-weight:normal;}
 span.colors{padding:2px 2px 0 2px;}
 /*------------------------------------center content--------------------*/
 .center_content{width:900px;padding:0px 0 0 0;background:url(../images/center_bg.png) repeat-y center;}
