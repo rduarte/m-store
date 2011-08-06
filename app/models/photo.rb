@@ -5,8 +5,9 @@ class Photo < ActiveRecord::Base
     :storage => :s3,
     :bucket => 'm-store',
     :styles => {
-      :small => "70x70#",
-      :medium  => "190x130#",
+      :thumb => "80x80#",
+      :small  => "190x130#",
+      :medium  => "300x300#",
       :big => "800x600>"
     },
     :s3_credentials => {

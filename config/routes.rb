@@ -9,5 +9,5 @@ MStore::Application.routes.draw do
   end
 
   devise_for :users
-  root :to => "home#index"
+  root :to => "categories#index"
 end

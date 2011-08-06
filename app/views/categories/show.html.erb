@@ -6,7 +6,7 @@
 <% @products.each do |product| %>
 	<div class="product_box">
 		<div class="product">
-			<%=image_link_to product %>
+			<%=image_link_to_product product %>
 
 			<p><%=link_to truncate(product.name), product_url(product.friendly_id) %><span class="price"><%=link_to raw(%[<span class="list_price">#{number_to_currency(product.list_price)}</span> #{number_to_currency(product.price)}]), product_url(product.friendly_id) %></span></p>
 		</div>          
