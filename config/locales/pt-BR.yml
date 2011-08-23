@@ -242,6 +242,7 @@
       category: Categoria
       user: Usuário
       photo: Foto
+      page: Página
     attributes:
         product:
           name: Nome
@@ -268,20 +269,20 @@
           product_id: Produto
           created_at: Criado em
           updated_at: Atualizado em
+        page:
+          name: Nome
+          description: Descrição
+          cached_slug: Parâmetro da URL
   named_routes_path:
     contact: contato
     'product/:id': 'produto/:id'
-    about: sobre-a-loja
-    specials: pedidos-personalizados
     cart: carrinho
   resources:
     categories: produtos
   titles:
     home: Início
-    about: Sobre a loja
     cart: Meu carrinho
     categories: Produtos
     contact: Contato
     product: Produto
-    specials: Pedidos personalizados
     navigation: Navegação

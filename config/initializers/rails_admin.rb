@@ -20,10 +20,21 @@ RailsAdmin.config do |config|
       field :product_id
       field :data do
         formatted_value do
-          bindings[:view].tag(:img, { :src => bindings[:object].data.url(:small) })
+          bindings[:view].tag(:img, { :src => bindings[:object].data.url(:thumb) })
         end
       end
       field :updated_at
+    end
+  end
+  config.model Page do
+    list do
+      field :name
+    end
+    exclude_fields :cached_slug
+    edit do
+      field :description, :text do
+        ckeditor true
+      end
     end
   end
 end
