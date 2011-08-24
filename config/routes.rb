@@ -5,7 +5,9 @@ MStore::Application.routes.draw do
     match 'contact' => 'contact#index', :as  => :contact
     match 'product/:id' => 'product#show', :as  => :product
     match 'cart' => 'cart#index', :as  => :cart
-    resources :categories
+    resources :categories do
+      get 'search', :on => :collection
+    end
   end
   match '/:all' => 'pages#index', :constraints => lambda {|req| !(req.path =~ /\A\/admin(\/.*)?\z/)  }
 

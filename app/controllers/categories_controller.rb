@@ -22,5 +22,11 @@ class CategoriesController < ApplicationController
                   :description => "",
                   :keywords => ""
   end
+  
+  def search
+    @products = Product.find_with_index(params[:q])
+    
+    render :show
+  end
 
 end
