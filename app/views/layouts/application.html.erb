@@ -20,7 +20,7 @@
 	      	<ul>                                                                       
 	        	<li><%=link_to "Início", root_path %></li>
 						<li><%=link_to "Produtos", categories_url %></li>
-<% Page.all.each do |page| %>
+<% @pages.each do |page| %>
 						<li><%=link_to page.name, "#{root_url}#{page.cached_slug}" %></li>
 <% end %>
 						<li><%=link_to "Meu carrinho", cart_url %></li>

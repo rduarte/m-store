@@ -273,6 +273,7 @@
           name: Nome
           description: Descrição
           cached_slug: Parâmetro da URL
+          priority: Prioridade
   named_routes_path:
     contact: contato
     'product/:id': 'produto/:id'

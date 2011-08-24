@@ -29,6 +29,7 @@ RailsAdmin.config do |config|
   config.model Page do
     list do
       field :name
+      field :priority
     end
     exclude_fields :cached_slug
     edit do
