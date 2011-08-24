@@ -5,13 +5,13 @@ class CategoriesController < ApplicationController
                   :keywords => ""
 
     breadcrumbs.add "titles.categories"
-    @products = Category.all.map { |cat| cat.products }.flatten
+    @products = Category.all.map { |cat| cat.products }.flatten.sort_by(&:name)
     render :show
   end
 
   def show
     @category = Category.find(params[:id])
-    @products = @category.self_and_descendants.map { |cat| cat.products }.flatten
+    @products = @category.self_and_descendants.map { |cat| cat.products }.flatten.sort_by(&:name)
     breadcrumbs.add "titles.categories", categories_url
     self_and_ancestors = []
     @category.self_and_ancestors.each do |category|
