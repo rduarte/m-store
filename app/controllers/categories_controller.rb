@@ -24,6 +24,13 @@ class CategoriesController < ApplicationController
   end
   
   def search
+    set_meta_tags :title => %[Buscando '#{params[:q]}' | #{t("titles.categories")}],
+                  :description => "",
+                  :keywords => ""
+
+    breadcrumbs.add "titles.categories", categories_url
+    breadcrumbs.add "Buscando '#{params[:q]}'"
+
     @products = Product.find_with_index(params[:q])
     
     render :show
