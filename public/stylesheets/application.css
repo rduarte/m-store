@@ -33,7 +33,7 @@ a.more{font-style:italic;color:#a81f22;float:right;text-decoration:none;font-siz
 img.right{float:right;padding:0 0 0 10px;}
 .right_box{width:340px;float:left;padding:10px 0 0 0;}
 .search{ padding:10px; background:#eaeaea; width:200px; }
-.search input{ width:130px; padding:4px; }
+.search input{ width:127px; padding:4px; }
 .search button { height:25px;border:none;background:#990000;text-decoration:none;text-align:center;color:#fff; top:-1px; position:relative;}
 /*--------feat_prod_box-----------*/
 .product_details{}
